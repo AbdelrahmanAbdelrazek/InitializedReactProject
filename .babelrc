@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "browsers": "last 2 Chrome versions",
+        "node": "current"
+      }
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/transform-runtime",
+    "@babel/proposal-class-properties",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "syntax-dynamic-import",
+    ["lodash"],
+    ["import", {
+      "libraryName": "antd",
+      "style": true
+    }],
+    ["module-resolver", {
+          "root": ["./src/apps", "./src/imports", "./"]
+    }]
+  ]
+}
