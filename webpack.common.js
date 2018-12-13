@@ -24,6 +24,20 @@ module.exports = {
         use: ["babel-loader"]
       },
       {
+        test: /antd.*\.less$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          {
+            loader: "less-loader",
+            options: {
+              javascriptEnabled: true,
+              // modifyVars: themeVariables
+            }
+          }
+        ]
+      },
+      {
         test: /\.less$/,
         exclude: /(node_modules|bower_components)/,
         use: [

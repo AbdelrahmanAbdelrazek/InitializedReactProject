@@ -19,7 +19,7 @@
       "style": true
     }],
     ["module-resolver", {
-          "root": ["./src/apps", "./src/imports", "./"]
+          "root": ["./src/app", "./src/imports", "./"]
     }]
   ]
 }

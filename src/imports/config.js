@@ -1,0 +1,1 @@
+export const productionUrl = "http://78.93.58.19/InvestAPI";
