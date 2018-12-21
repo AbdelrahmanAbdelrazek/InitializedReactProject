@@ -1,6 +1,6 @@
 import { fetchData } from 'helpers/apiMethods';
 import { get } from 'lodash';
-import { fetchAllData } from 'helpers/functions';
+import { fetchAllData } from 'helpers/apiMethods';
 
 export function getPaginatedData(props, onMount) {
     const { crud: { fetch }, setItemsCount, addToData, api_config, setTotalPages, pagination = {}, pageSize: propsPageSize, initialPage = 1 } = props;

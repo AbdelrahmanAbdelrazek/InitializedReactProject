@@ -3,7 +3,7 @@ import { Select } from 'antd';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './mapping';
 import { get, has, isEqual, omit } from 'lodash';
-import { fetchAllData } from 'helpers/functions'
+import { fetchAllData } from 'helpers/apiMethods'
 import { translate } from 'react-i18next'
 import mainInput from 'helpers/main/input';
 import { fetchData } from 'helpers/apiMethods';

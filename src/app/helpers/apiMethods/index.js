@@ -34,7 +34,7 @@ export function deleteItem(api_url, itemId, config) {
 
 export function fetchAllData(api_url, config) {
     return new Promise((resolve, reject) => {
-        fetchData(url, config)
+        fetchData(api_url, config)
             .then(response => {
                 const nextLink = get(response, 'links.next');
                 if (nextLink) {
