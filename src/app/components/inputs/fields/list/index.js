@@ -4,7 +4,7 @@ import renderField from 'components/inputs';
 import { isEqual, pick, get, set, sortBy, isEmpty } from 'lodash';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './mapping';
-import { postNewItem, updateItem, deleteItem } from 'helpers/apiMethods'
+import { postItem, updateItem, deleteItem } from 'helpers/apiMethods'
 import mainInput from 'helpers/main/input';
 import * as fieldValues from 'helpers/fieldValues';
 import { apply_permissions, serverFieldMapper } from 'helpers/functions';
@@ -213,7 +213,7 @@ export class list extends mainInput {
                     }
                     else {
                         if (createUrl) {
-                            postNewItem(createUrl, newItem,
+                            postItem(createUrl, newItem,
                                 { ...api_config, params: { ...get(api_config, 'params'), ...pick(values, params) } })
                                 .then((response) => {
                                     addToData(response, calculatedIndex, 'rewrite');

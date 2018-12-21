@@ -6,6 +6,7 @@
 package-lock.json
 # # dependencies
 /node_modules
+/www/js/dist
 # /data
 
 # # IDEs and editors

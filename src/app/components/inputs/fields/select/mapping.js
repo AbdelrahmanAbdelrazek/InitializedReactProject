@@ -1,12 +1,13 @@
 import {get} from 'lodash';
-export const mapStateToProps = ({selectors = {}, mainApp, mapViewer}, ownProps) => ({
+export const mapStateToProps = ({selectors = {}, mainApp, mapViewer}, ownProps) => {
+    return ({
     lang: mainApp.language,
     selectors,
     apps: mainApp.apps,
     info: get(mapViewer, 'info.info', {}),
     ...selectors[ownProps.moduleName] || {},
     value_key: get(selectors[ownProps.moduleName], 'value_key', ownProps.value_key)
-})
+})}
 
 export const mapDispatchToProps = (dispatch, { moduleName }) => {
     return {

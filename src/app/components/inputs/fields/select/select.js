@@ -9,8 +9,10 @@ import mainInput from 'helpers/main/input';
 import { fetchData } from 'helpers/apiMethods';
 const Option = Select.Option;
 export default class selectComponent extends mainInput {
+
     componentDidMount() {
         const { moduleName, apps, data = [], input: { value }, selectChange, value_key = 'value', setValueLabelKeys, setData, fetch, ux_pattern } = this.props;
+       
         if (!data.length && has(apps, moduleName)) {
             const { value_key = get(apps, `${moduleName}.primary_key`),
                 label_key = get(apps, `${moduleName}.select_show`)
@@ -63,6 +65,7 @@ export default class selectComponent extends mainInput {
         (!isEqual(nextProps.input.value, this.props.input.value)) ||
         (!isEqual(nextProps.lang, this.props.lang));
     }
+
     componentDidUpdate(prevProps, prevState) {
         const { data, input: { value }, selectChange, resetFields, change } = prevProps;
         const { data: nextData = [], input: { value: nextValue }, value_key = 'value' } = this.props;
@@ -101,6 +104,7 @@ export default class selectComponent extends mainInput {
     }
     render() {
         const { input: { value, ...input }, label, placeholder, data = [], label_key = "label", value_key = "value", t } = this.props;
+        
         return (
             <Select
                 onPopupScroll={this.onScroll.bind(this)}
@@ -113,7 +117,7 @@ export default class selectComponent extends mainInput {
                 onChange={this.handleChange.bind(this)}
                 placeholder={placeholder ? placeholder : t(label)}
             >
-                {data.map((d) => (
+                {data.map((d) =>(
                     <Option value={get(d, value_key)} data={d} key={get(d, value_key)}>{t(get(d, label_key))}</Option>)
                 )}
 

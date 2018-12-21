@@ -1,1 +1,1 @@
-export const productionUrl = "http://78.93.58.19/InvestAPI";
+export const productionUrl = "http://127.0.0.1:8000/api/v1";
