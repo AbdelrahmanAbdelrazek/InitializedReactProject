@@ -11,7 +11,7 @@ export function fetchData(api_url, config) {
     }
 }
 
-export function postNewItem(api_url, item, config) {
+export function postItem(api_url, item, config) {
     const url = api_url.includes("http")? api_url :  productionUrl + api_url ;    
     return axios
         .post(url, item, config)
